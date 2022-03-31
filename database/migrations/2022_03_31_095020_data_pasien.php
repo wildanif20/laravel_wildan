@@ -13,12 +13,12 @@ class DataPasien extends Migration
      */
     public function up()
     {
-        Schema::create('datapasien', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('data_pasien', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nama_pasien');
-            $table->string('alamat')->unique();
-            $table->integer('no_telpon')->unique();
-            $table->bigIncrements('id_rs');
+            $table->string('alamat');
+            $table->integer('no_telpon');
+            $table->integer('id_rs');
         });
     }
 
@@ -29,6 +29,6 @@ class DataPasien extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datapasien');
+        Schema::dropIfExists('data_pasien');
     }
 }
